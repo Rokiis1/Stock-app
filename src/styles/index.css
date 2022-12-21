@@ -1,0 +1,48 @@
+:root {
+  --color-primary: #333;
+  --color-secondary: #fff;
+  --color-background: #fff;
+}
+
+[data-theme='dark'] {
+  --color-primary: #fff;
+  --color-secondary: #333;
+  --color-background: #333;
+}
+
+body {
+  color: var(--color-primary);
+  background-color: var(--color-background);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  border-radius: 14px;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label {
+  background-color: rgb(191, 32, 32);
+}
+
+input[type="checkbox"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:checked + label:before {
+  transform: translateX(28px);
+}
