@@ -11,4 +11,5 @@ export interface Company {
   weburl: string;
   logo: string;
   finnhubIndustry: string;
+  [Symbol.iterator]: () => Iterator<string>;
 }

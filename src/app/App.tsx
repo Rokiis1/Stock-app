@@ -1,8 +1,14 @@
 import * as React from 'react';
 import ToggleButton from '../components/ToggleButton';
 import { ThemeContext, ThemeContextState } from "../context/themeContext";
+import SearchBar from '../components/StockProfile';
+import StockProfileContextProvider from '../context/StockProfileContextProvider';
+import StockProfile from '../components/StockProfile';
+import StockQuote from '../components/StockQuote';
+
 
 const App: React.FC = () => {
+  
 
   const [theme, setTheme] = React.useState<ThemeContextState['theme']>(
     (localStorage.getItem('theme') as ThemeContextState['theme']) || 'light'
@@ -27,11 +33,13 @@ const App: React.FC = () => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <StockProfileContextProvider>
       <div data-theme={theme}>
         <ToggleButton />
-        <h1>Welcome to my app</h1>
-        <p>This is some content</p>
+       <StockProfile />
+          <StockQuote/>
       </div>
+      </StockProfileContextProvider>
     </ThemeContext.Provider>
   );
 };

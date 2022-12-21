@@ -4,7 +4,7 @@ import { ThemeContext } from "../context/themeContext";
 const ToggleButton: React.FC = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
     return (
-        <div className="toggle-wrapper">
+        <form className="toggle-wrapper">
             <input
                 id="toggle"
                 type="checkbox"
@@ -13,7 +13,7 @@ const ToggleButton: React.FC = () => {
                 onChange={toggleTheme}
             />
             <label htmlFor="toggle"></label>
-        </div>
+        </form>
     );
 };
 
